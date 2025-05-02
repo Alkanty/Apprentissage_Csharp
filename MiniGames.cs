@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
+using Apprentissage_Csharp;
 
 namespace MiFirstPrograms
 {
@@ -16,8 +17,10 @@ namespace MiFirstPrograms
 
     class MiniGames
     {
-        static void Main2(string[] args)
+        static void Main(string[] args)
         {
+
+            NameGenerator.CreateLetter();
             
         }
         static void RockPaperScissor()

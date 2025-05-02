@@ -15,9 +15,9 @@ namespace Apprentissage_Csharp
     // INDENTING AFTER {}
     // CONDITION EXCEPTION(switch,if,) : ALL ON ONE LINE
 
-    class ExoReturnParam
+    static class NameGenerator
     {
-        static void Main(string[] args)
+        public static void CreateLetter()
         {
 
 
