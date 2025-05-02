@@ -5,11 +5,20 @@ using System.Drawing;
 
 namespace MiFirstPrograms
 {
+
+    ////NOMENCLATURE////
+    //NAMESPACE + CLASS + METHOD = PASCAL CASE
+    // VARIABLE = LOWER CASE
+    // COMMENT ALWAYS ON ONE LINE : BRIEF IN ONE SENTENCE ON TOP OF THE ELEMENT DESCRIBE
+    // {} JUMP A LIGNE AFTER LINKED CLASS/METHOD/LOOP BUT SAME LEVEL +
+    // INDENTING AFTER {}
+    // CONDITION EXCEPTION(switch,if,) : ALL ON ONE LINE
+
     class MiniGames
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
-            GuessingNumber();
+            
         }
         static void RockPaperScissor()
         {
