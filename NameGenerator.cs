@@ -46,11 +46,11 @@ namespace Apprentissage_Csharp
 
 
 
-            Console.WriteLine($"hello my name is {NameGenerator(char1, char2, char3)}");
+            Console.WriteLine($"hello my name is {NameCompiler(char1, char2, char3)}");
 
         }
 
-        static string NameGenerator(params char[] letters)
+        static string NameCompiler(params char[] letters)
         {
             //COUNT NUMBER OF PARAMETER
             var count = letters == null ? 0 : letters.Length;
