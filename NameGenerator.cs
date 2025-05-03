@@ -45,11 +45,12 @@ namespace Apprentissage_Csharp
             }
 
 
-
+            // USING ARGUMENT [IN () ] : NAME OF THE VARIABLE TO EXPORT : USE TO EXPORT DATA OUTSIDE THE METHOD
             Console.WriteLine($"hello my name is {NameCompiler(char1, char2, char3)}");
 
         }
 
+        //METHOD USING PARAMETERS [IN () ] : PARAMETERS NEEDS THE TYPE PRECEEDING IT [STRING/INT...] : USE TO IMPORT DATA INSIDE THE METHOD
         static string NameCompiler(params char[] letters)
         {
             //COUNT NUMBER OF PARAMETER

@@ -20,8 +20,7 @@ namespace MiFirstPrograms
     {
         static void Main(string[] args)
         {
-            CarObjectTest car1 = new CarObjectTest();
-
+            InstanceObject.InstanceObjectNow();
         }
         static void RockPaperScissor()
         {
@@ -42,7 +41,7 @@ namespace MiFirstPrograms
                     {
 
 
-                        //DISPLAY POINT
+                        //DISPLAY POIN
                         Console.WriteLine($"player has {playerpoint} and computer has {computerpoint} points");
 
                         //CHOICE OF THE PLAYER
