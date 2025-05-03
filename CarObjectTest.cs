@@ -15,6 +15,9 @@ namespace Apprentissage_Csharp
     // INDENTING AFTER {}
     // CONDITION EXCEPTION(switch,if,) : ALL ON ONE LINE
 
+
+
+  
     public class InstanceObject()
     {
         public static void InstanceObjectNow()
@@ -22,26 +25,38 @@ namespace Apprentissage_Csharp
   
                 CarObjectTest car1 = new CarObjectTest("408","Peugeot",2020);
                 CarObjectTest car2 = new CarObjectTest("R11", "Renault", 1998);
-                car1.GetCarInfo();
                 car2.GetCarInfo();
+                car2.RaiseSpeed(true);
                 // Getting acces to the static class field carnumber
                 Console.WriteLine(CarObjectTest.carnumber);
+                
 
         }
 
     }
-    
 
-    class CarObjectTest
+    // PARENT CLASS OF VEHICULE : GIVES HIS METHOD AND FIELD TO BE USED BY THE CHILDREN (INHERITANCE)
+    class VehiculeObjectTest() 
+    {
+        public int vehiculecurrentspeed ;
+        public int vehiculemaxspeed = 200;
+        bool vehiculecanfly ;
+        bool vehiculecangoroad;
+        bool vehiculecangowater;
+
+    }
+
+
+    //CANT CREATE OBJECT FROM A STATIC CLASS
+    //CHILD CLASS OF CAR : INHERIT THE FIELDS FROM VEHICULE (INHERITANCE)
+    class CarObjectTest : VehiculeObjectTest
     {
         //FIELDS THAT ARE PUBLIC (NOT SAFE) OF MY OBJECT CAROBJECTTEST
         string carname;
         string carconstructor;
-        //the static field provides us with the ability to increment the variable without overiding each time a new instance of a class is made 
+        //the static field provides us with the ability to increment the variable without overiding each time a new instance of a class is made. it belong to the class and not the instance ! 
         public static int carnumber ;
         int caryear;
-        int caractualspeed;
-        int carmaxspeed;
         bool carengineon;
 
         //CONSTRUCTOR : SPECIAL METHOD THAT IS CREATED BY DEFAULT IF NO CREATED : KEEPS THE SAME NAME AS THE CLASS IT IS ATTACH TO : USED TO ASSIGN ARGUMENT TO FIELDS
@@ -66,10 +81,10 @@ namespace Apprentissage_Csharp
             Console.WriteLine($"car is a {carname} from {carconstructor} \n it has been made in {caryear} ");
 
         }
-        
-        public void RaiseSpeed()
+
+        public void RaiseSpeed(bool carengineon)
         {
-            if (carengineon == true) { caractualspeed = 30; Console.WriteLine($"car is speeding towards {caractualspeed} km/h)"); }
+            if (carengineon == true) { vehiculecurrentspeed = 30; Console.WriteLine($"the car {carname} is speeding towards {vehiculecurrentspeed} km/h)"); }
             else
             {
                 Console.WriteLine("engine need to be started first");
