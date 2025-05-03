@@ -2,6 +2,7 @@
 using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
+using System.Threading.Tasks.Dataflow;
 using Apprentissage_Csharp;
 
 namespace MiFirstPrograms
@@ -19,9 +20,8 @@ namespace MiFirstPrograms
     {
         static void Main(string[] args)
         {
+            CarObjectTest car1 = new CarObjectTest();
 
-            NameGenerator.CreateLetter();
-            
         }
         static void RockPaperScissor()
         {
