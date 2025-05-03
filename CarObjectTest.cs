@@ -21,8 +21,13 @@ namespace Apprentissage_Csharp
                { 
   
                 CarObjectTest car1 = new CarObjectTest("408","Peugeot",2020);
+                CarObjectTest car2 = new CarObjectTest("R11", "Renault", 1998);
                 car1.GetCarInfo();
-              }
+                car2.GetCarInfo();
+                // Getting acces to the static class field carnumber
+                Console.WriteLine(CarObjectTest.carnumber);
+
+        }
 
     }
     
@@ -30,12 +35,14 @@ namespace Apprentissage_Csharp
     class CarObjectTest
     {
         //FIELDS THAT ARE PUBLIC (NOT SAFE) OF MY OBJECT CAROBJECTTEST
-        public string carname;
-        public string carconstructor;
-        public int caryear;
-        public int caractualspeed;
-        public int carmaxspeed;
-        public bool carengineon;
+        string carname;
+        string carconstructor;
+        //the static field provides us with the ability to increment the variable without overiding each time a new instance of a class is made 
+        public static int carnumber ;
+        int caryear;
+        int caractualspeed;
+        int carmaxspeed;
+        bool carengineon;
 
         //CONSTRUCTOR : SPECIAL METHOD THAT IS CREATED BY DEFAULT IF NO CREATED : KEEPS THE SAME NAME AS THE CLASS IT IS ATTACH TO : USED TO ASSIGN ARGUMENT TO FIELDS
         public CarObjectTest(string carname,string carconstructor,int caryear)
@@ -44,6 +51,11 @@ namespace Apprentissage_Csharp
             this.carname = carname;
             this.carconstructor = carconstructor;
             this.caryear = caryear;
+
+            //add 1 to car number each time a new instance of the object is created and tho the construtor is used : you can use the constructor method like a regular method too
+            carnumber++; 
+
+
 
         }
 
