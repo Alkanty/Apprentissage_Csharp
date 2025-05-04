@@ -24,7 +24,7 @@ namespace Apprentissage_Csharp
                { 
   
                 CarObjectTest car1 = new CarObjectTest("408","Peugeot",2020);
-                CarObjectTest car2 = new CarObjectTest("R11", "Renault", 1998);
+                CarObjectTest car2 = CarObjectTest.CopyCar(car1);
                 car2.GetCarInfo();
                 car2.RaiseSpeed(true);
                 // Getting acces to the static class field carnumber
@@ -53,14 +53,15 @@ namespace Apprentissage_Csharp
     class CarObjectTest : VehiculeObjectTest
     {
         //FIELDS THAT ARE PUBLIC (NOT SAFE) OF MY OBJECT CAROBJECTTEST
-        string carname;
-        string carconstructor;
+        public string carname;
+        public string carconstructor;
         //the static field provides us with the ability to increment the variable without overiding each time a new instance of a class is made. it belong to the class and not the instance ! 
         public static int carnumber ;
         int caryear;
         bool carengineon;
 
-        //CONSTRUCTOR : SPECIAL METHOD THAT IS CREATED BY DEFAULT IF NO CREATED : KEEPS THE SAME NAME AS THE CLASS IT IS ATTACH TO : USED TO ASSIGN ARGUMENT TO FIELDS
+        //CONSTRUCTOR : SPECIAL METHOD THAT IS CREATED BY DEFAULT IF NO CREATED : KEEPS THE SAME NAME AS THE CLASS IT IS ATTACH TO : USED TO ASSIGN ARGUMENT TO FIELDS AT THE CREATION OF THE INSTANCE
+        // OF OBJECT
         public CarObjectTest(string carname,string carconstructor,int caryear)
         {
             //the "this" links the different fields to the requested parameters  
@@ -77,6 +78,13 @@ namespace Apprentissage_Csharp
 
 
         //METHODS OF MY OBJECT CAR OBJECTTEST
+        public static CarObjectTest CopyCar(CarObjectTest car)
+        {
+            return new CarObjectTest(car.carname, car.carconstructor, car.caryear); 
+        }
+        
+        
+        
         public void GetCarInfo()
         {
             Console.WriteLine($"car is a {carname} from {carconstructor} \n it has been made in {caryear} ");
