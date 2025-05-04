@@ -36,7 +36,8 @@ namespace Apprentissage_Csharp
     }
 
     // PARENT CLASS OF VEHICULE : GIVES HIS METHOD AND FIELD TO BE USED BY THE CHILDREN (INHERITANCE)
-    class VehiculeObjectTest() 
+    // ABSTRACT CLASS : PROHIB THE ABILITY TO CALL THE  OBJECT CLASS AND METHOD THAT ARE LINKED TO IT, 
+    abstract class VehiculeObjectTest() 
     {
         public int vehiculecurrentspeed ;
         public int vehiculemaxspeed = 200;
