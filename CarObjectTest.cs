@@ -78,6 +78,7 @@ namespace Apprentissage_Csharp
 
 
         //METHODS OF MY OBJECT CAR OBJECTTEST
+        //SPECIAL METHOD THAT USE OBJECT AS ARGUMENT
         public static CarObjectTest CopyCar(CarObjectTest car)
         {
             return new CarObjectTest(car.carname, car.carconstructor, car.caryear); 

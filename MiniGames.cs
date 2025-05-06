@@ -21,7 +21,7 @@ namespace MiFirstPrograms
     {
         static void Main(string[] args)
         {
-            InstanceObject.InstanceObjectNow();
+            ConfigTest.ValueTypeLimit();
         }
         static void RockPaperScissor()
         {
