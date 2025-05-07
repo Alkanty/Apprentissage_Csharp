@@ -21,7 +21,7 @@ namespace MiFirstPrograms
     {
         static void Main(string[] args)
         {
-            ConfigTest.ValueTypeLimit();
+            ConfigTest.CastingAndConversion();
         }
         static void RockPaperScissor()
         {

@@ -15,8 +15,20 @@ namespace Apprentissage_Csharp
         {
             int first = 2;
             string second = "4";
-            int result = first + Convert.ToInt16(second);
+            int result = first + Convert.ToInt16(second);        // Convert.class tha able to convert multiple format str to int
             Console.WriteLine(result);
+
+            decimal myDecimal = 3.14m;
+            Console.WriteLine($"decimal: {myDecimal}");             
+
+            int myInt = (int)myDecimal;                           // cast dec > int = trunk the number to only 3 . Narrowing conversion
+            Console.WriteLine($"int: {myInt}");                   // Casting is an instruction to the C# compiler that you know precision may be lost, but you're willing to accept it.
+                                                                  // BEWARE OF THE TRUNCATED
+
+            string first1 = "5";
+            string second2 = "7";
+            int sum = int.Parse(first1) + int.Parse(second);      // Parse() method, which converts a string into the given data type. In this case
+            Console.WriteLine(sum);
 
         }
         public static void ValueTypeLimit()
