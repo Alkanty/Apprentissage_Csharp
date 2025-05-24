@@ -21,7 +21,7 @@ namespace MiFirstPrograms
     {
         static void Main(string[] args)
         {
-            ConfigTest.CastingAndConversion();
+            ArrayInC.ArrayExo2();
         }
         static void RockPaperScissor()
         {
@@ -113,6 +113,91 @@ namespace MiFirstPrograms
                 continuegame = Console.ReadLine();
             }
         }
-    }
+        public static void RandomNumber()
+        {
 
-}
+
+            //init de la variable de jeu
+            string proceedprog = "yes";
+
+            //boucle de demarrage du jeu
+            while (proceedprog == "yes")
+            {
+                //init de la partie en cours
+                string proceedgame = "yes";
+
+                //init du numéro aléatoire
+                Random random = new Random();
+                int randomnumber = random.Next(1, 100);
+
+                //init du numéro utilisateur
+                int guessednumber;
+
+                Console.WriteLine("Welcole to the GuessNumber game ! a number from 1 to 100 has been chosen, you have to guess it ! ");
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("guess the number");
+                    guessednumber = Convert.ToInt32(Console.ReadLine());
+                    if (guessednumber > randomnumber)
+                    { Console.WriteLine("lower, you want to continue ? "); }
+                    else if (guessednumber < randomnumber)
+                    { Console.WriteLine("Higher, you want to continue ?"); }
+                    else if (guessednumber == randomnumber)
+                    { Console.WriteLine($"You got it !! the number was {randomnumber} you used {i} round to guess it"); break; }
+                }
+                Console.WriteLine("you want to launch an other game ? ");
+                proceedprog = Console.ReadLine();
+            }
+        }
+        public static void Calculator()
+        {
+
+            double operation;
+            string proceedprog = "yes";
+
+            while (proceedprog == "yes")
+            {
+
+
+                Console.WriteLine("Welcome to the calculator");
+
+                // INIT NUMBER
+
+                Console.WriteLine("Enter Number 1");
+                double calcnumber1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter Number 2");
+                double calcnumber2 = Convert.ToDouble(Console.ReadLine());
+
+                string calcoperator = "/";
+
+                while (calcoperator == "/" || calcoperator == "+" || calcoperator == "-" || calcoperator == "*")
+                {
+                    Console.WriteLine("Enter calcoperator (/ or * or + or -)");
+                    calcoperator = Console.ReadLine();
+
+
+
+                    switch (calcoperator)
+                    {
+                        case "/": operation = calcnumber1 / calcnumber2; Console.WriteLine($"{calcnumber1} {calcoperator} {calcnumber2} = {operation}"); break;
+                        case "+": operation = calcnumber1 + calcnumber2; Console.WriteLine($"{calcnumber1} {calcoperator} {calcnumber2} = {operation}"); break;
+                        case "-": operation = calcnumber1 - calcnumber2; Console.WriteLine($"{calcnumber1} {calcoperator} {calcnumber2} = {operation}"); break;
+                        case "*": operation = calcnumber1 * calcnumber2; Console.WriteLine($"{calcnumber1} {calcoperator} {calcnumber2} = {operation}"); break;
+                    }
+                    break;
+
+                }
+                Console.WriteLine("would you wish to continue ? yes/no");
+                proceedprog = Console.ReadLine();
+            }
+
+
+        }
+    }
+}    
+
+    
+
+
+
